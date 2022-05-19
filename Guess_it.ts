@@ -5,8 +5,9 @@
 // const n: number = prompt("You are going to guess a number from 0 to :");
 // console.log(`Your number is from zero to ${n}.`);
 
-function multiply(a: number, b: number): number {
-  return a * b;
+function multiply(n: number): number {
+  return n;
 }
-// if console log ==> put void for return
-console.log(multiply(5, 2));
+//! constant n is just for testing
+const n: number = 100;
+console.log(multiply(n));
