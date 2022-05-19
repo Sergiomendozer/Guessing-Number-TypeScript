@@ -1,10 +1,4 @@
-// let firstName: string = "Dylan";
-// console.log(firstName);
 // ts-node Guess_it
-
-// const prompt = require("prompt-sync")({ sigint: true });
-// const n: number = prompt("You are going to guess a number from 0 to :");
-// console.log(`Your number is from zero to ${n}.`);
 function did_they_guess_it(n: number, r: number, guess: number): any {
   if (guess == r) {
     console.log("You Guess it, Congrats");
@@ -31,6 +25,8 @@ function random_number_generator(n: number): any {
   let random_number: number = Math.floor(Math.random() * n + 0);
   return guess_it(n, random_number);
 }
-//! constant n is just for testing
-const n: number = 100;
+
+const prompt = require("prompt-sync")({ sigint: true });
+const n: number = prompt("You are going to guess a number from 0 to :");
+// const n: number = 100; //! constant n is just for testing
 random_number_generator(n);
