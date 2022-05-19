@@ -6,17 +6,24 @@
 // const n: number = prompt("You are going to guess a number from 0 to :");
 // console.log(`Your number is from zero to ${n}.`);
 function did_they_guess_it(n: number, r: number, guess: number): any {
-  console.log("called"); //!for testing
   if (guess == r) {
+    console.log("You Guess it, Congrats");
+  } else if (guess > r) {
+    const prompt = require("prompt-sync")({ sigint: true });
+    let guess: number = prompt("Guess Lower: ");
+    return did_they_guess_it(n, r, guess);
+  } else {
+    const prompt = require("prompt-sync")({ sigint: true });
+    let guess: number = prompt("Guess Higher: ");
+    return did_they_guess_it(n, r, guess);
   }
 }
 
 function guess_it(n: number, r: number): any {
-  console.log("N:" + n); //!for testing
-  console.log("R:" + r); //!for testing
+  //   console.log("N:" + n); //!for testing
+  //   console.log("R:" + r); //!for testing
   const prompt = require("prompt-sync")({ sigint: true });
   let guess: number = prompt("Take a guess: ");
-  console.log("G:" + guess); //!for testing
   return did_they_guess_it(n, r, guess);
 }
 
